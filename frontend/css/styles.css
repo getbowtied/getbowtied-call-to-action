@@ -1,0 +1,142 @@
+.getbowtied_get_this_theme {
+	display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.getbowtied_get_this_theme {
+		display: inline-block;
+		background-color: #729c29;
+		position: fixed;
+		bottom: 30px;
+		right: 30px;
+		z-index: 99999;
+
+		/*height: 80px;
+		width: 80px;*/
+
+		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+
+		box-shadow: -6.772px 8.668px 16px 0px rgba(28, 30, 35, 0.15);
+		-webkit-box-shadow: -6.772px 8.668px 16px 0px rgba(28, 30, 35, 0.15);
+		-moz-box-shadow: -6.772px 8.668px 16px 0px rgba(28, 30, 35, 0.15);
+
+		transition: all 1s ease;
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-o-transition: all 1s ease;
+
+		animation-name: animFadeUp;
+		animation-fill-mode: both;
+		animation-duration: 0.4s;
+		animation-timing-function: ease;
+		animation-delay: 1.5s;
+
+		-webkit-animation-name: animFadeUp;
+		-webkit-animation-fill-mode: both;
+		-webkit-animation-duration: 0.4s;
+		-webkit-animation-timing-function: ease;
+		-webkit-animation-delay: 1.5s;
+
+		-moz-animation-name: animFadeUp;
+		-moz-animation-fill-mode: both;
+		-moz-animation-duration: 0.4s;
+		-moz-animation-timing-function: ease;
+		-moz-animation-delay: 1.5s;
+
+		-o-animation-name: animFadeUp;
+		-o-animation-fill-mode: both;
+		-o-animation-duration: 0.4s;
+		-o-animation-timing-function: ease;
+		-o-animation-delay: 1.5s;
+
+	}
+
+
+	.getbowtied_get_this_theme:hover 
+	{
+		color: #fff;
+		background: #83b231;
+	}
+
+	.getbowtied_get_this_theme img.envato-logo 
+	{
+		position: absolute;
+		right: -8px;
+		bottom: -3px;
+		background: #7cb442;
+		border-radius: 50%;
+		padding: 6px;
+	}
+
+	.envato-logo
+	{
+		position: absolute;
+		right: -20px;
+		bottom: -20px;
+	}
+
+}
+
+@-webkit-keyframes animFadeUp 
+{
+	0%   
+	{ 
+		opacity: 0; 
+		transform: translate3d(100%,0,0) 
+	}
+
+	100% 
+	{ 
+		opacity: 1; 
+		transform: translate3d(0,0,0); 
+	}
+}
+@keyframes animFadeUp 
+{
+	0%   
+	{ 
+		opacity: 0; 
+		transform: translate3d(100%,0,0) 
+	}
+
+	100% 
+	{ 
+		opacity: 1; 
+		transform: translate3d(0,0,0); 
+	}
+}
+
+@-moz-keyframes animFadeUp 
+{
+	0%   
+	{ 
+		opacity: 0; 
+		transform: translate3d(100%,0,0) 
+	}
+
+	100% 
+	{ 
+		opacity: 1; 
+		transform: translate3d(0,0,0); 
+	}
+}
+
+@-o-keyframes animFadeUp 
+{
+	0%   
+	{ 
+		opacity: 0; 
+		transform: translate3d(100%,0,0) 
+	}
+
+	100% 
+	{ 
+		opacity: 1; 
+		transform: translate3d(0,0,0); 
+	}
+}
+
+
