@@ -3,7 +3,7 @@ jQuery(function($) {
     "use strict";
     
     $(document).ready(function(){
-	
+
 		function getQueryVariable(variable)
 		{
 			var query = window.location.search.substring(1);
@@ -68,7 +68,7 @@ jQuery(function($) {
 	 		$('.getbowtied_get_this_theme').attr('href', the_href);
 	 	}
 
-    })
-    
+    });
+
 	 
 });

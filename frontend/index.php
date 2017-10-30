@@ -9,6 +9,7 @@ add_action('wp_enqueue_scripts', 'getbowtied_get_this_theme_button_styles', 99);
 function getbowtied_get_this_theme_button_styles() {
 	wp_enqueue_style('getbowtied_get_this_theme_button', plugins_url('/css/styles.css', __FILE__), array(), '1.0', 'all' );
 	wp_enqueue_script('getbowtied_buttons', plugins_url('/js/scripts.js', __FILE__), array('jquery'), '1.0', TRUE);
+	wp_enqueue_script('getbowtied_buttons_svg', plugins_url('/js/svg.js', __FILE__), array('jquery'), '1.0', FALSE);
 }
 
 
@@ -25,8 +26,11 @@ function getbowtied_get_this_theme_button_output() {
     <a class="getbowtied_get_this_theme" 
     	href="<?php echo get_option('button_link'); ?>" 
     	target="_blank" onclick="_gaq.push(['_trackEvent', '<?php echo get_option('button_event_tracking_identifier'); ?>', 'Purchase', 'Clicked']);">
-    	<img class="envato-logo" src="<?php echo plugins_url('/img/envato-logo.png', __FILE__); ?>" />
-    	<img class="price" src="<?php echo plugins_url('/img/69.png', __FILE__); ?>" />
+    	 <span class="purchase-btn">
+    	 	<img class="envato-logo svg" src="<?php echo plugins_url('/img/envato-logo.svg', __FILE__); ?>" /> 
+    	 	<?php _e('PURCHASE $69 ', 'getbowtied'); ?>
+    	 </span>
+    	
     </a>
 	
 	<?php

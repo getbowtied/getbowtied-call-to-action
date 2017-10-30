@@ -6,22 +6,30 @@
 
 	.getbowtied_get_this_theme {
 		display: inline-block;
-		background-color: #729c29;
+		background-color: #000000;
 		position: fixed;
-		bottom: 30px;
-		right: 30px;
+		bottom: 59px;
+		right: 120px;
 		z-index: 99999;
+		
+		color: #FFF;
+		font-family: NeueEinstellung;
+		
+		padding: 9px 10px 6px 0;
+		text-transform: uppercase;
+		font-size: 11px;
+		line-height: 18px;
 
 		/*height: 80px;
 		width: 80px;*/
 
-		border-radius: 50%;
-		-webkit-border-radius: 50%;
-		-moz-border-radius: 50%;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
 
-		box-shadow: -6.772px 8.668px 16px 0px rgba(28, 30, 35, 0.15);
-		-webkit-box-shadow: -6.772px 8.668px 16px 0px rgba(28, 30, 35, 0.15);
-		-moz-box-shadow: -6.772px 8.668px 16px 0px rgba(28, 30, 35, 0.15);
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
+		-webkit-box-shadow:  0 2px 4px 0 rgba(0,0,0,0.14);
+		-moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
 
 		transition: all 1s ease;
 		-webkit-transition: all 1s ease;
@@ -51,31 +59,33 @@
 		-o-animation-duration: 0.4s;
 		-o-animation-timing-function: ease;
 		-o-animation-delay: 1.5s;
-
 	}
 
+	.purchase-btn
+	{
+		display: flex;
+		-webkit-align-content: center;
+		        align-content: center;
+	}
 
 	.getbowtied_get_this_theme:hover 
 	{
 		color: #fff;
-		background: #83b231;
+		background-color: #7CB442;
 	}
 
-	.getbowtied_get_this_theme img.envato-logo 
+	.getbowtied_get_this_theme img.envato-logo,
+	.replaced-svg
 	{
-		position: absolute;
-		right: -8px;
-		bottom: -3px;
-		background: #7cb442;
-		border-radius: 50%;
-		padding: 6px;
+		width: 17px;
+		height: 17px;
+		margin-right: 6px;
+		margin-left: 11px;
 	}
-
-	.envato-logo
+	
+	.replaced-svg path
 	{
-		position: absolute;
-		right: -20px;
-		bottom: -20px;
+		fill: #FFFFFF;
 	}
 
 }
