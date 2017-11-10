@@ -7,13 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action('admin_menu', 'test_plugin_setup_menu');
  
 function test_plugin_setup_menu(){
-        add_menu_page( 'Get Bowtied Goodies', 'Get Bowtied Goodies', 'manage_options', 'test-plugin', 'global_custom_options' );
+        add_menu_page( 'Call-to-Action', 'Call-to-Action', 'manage_options', 'test-plugin', 'global_custom_options' );
 }
 
 function global_custom_options() {
 ?>
     <div class="wrap">
-        <h2>Get Bowtied - Get This Theme Button - Options</h2>
+        <h2>Get Bowtied - Call-to-Action Button - Options</h2>
         <form method="post" action="options.php">
             <?php wp_nonce_field('update-options') ?>
             <p>
