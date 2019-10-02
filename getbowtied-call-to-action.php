@@ -4,7 +4,7 @@
  * Plugin Name:       GetBowtied Call-To-Action
  * Plugin URI:        https://github.com/getbowtied/getbowtied-call-to-action
  * Description:       Getbowtied call-to-action buttons.
- * Version:           1.0.0
+ * Version:           1.0
  * Author:            GetBowtied
  * Author URI:        https://getbowtied.com/
  * License:           GPL-2.0+
@@ -24,6 +24,13 @@ if( !function_exists('wp_get_current_user') ) {
 }
 
 define( 'GETBOWTIED_CALL_TO_ACTION_VERSION', '1.0.0' );
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/updater/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://raw.githubusercontent.com/getbowtied/getbowtied-call-to-action/master/includes/updater/assets/plugin.json',
+	__FILE__,
+	'getbowtied-call-to-action'
+);
 
 /**
  * The core plugin class.
