@@ -109,8 +109,6 @@ class Getbowtied_Call_To_Action_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/getbowtied-call-to-action-public.js', array( 'jquery' ), $this->version, false );
-	}
+	public function enqueue_scripts() {}
 
 }
