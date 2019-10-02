@@ -1,0 +1,66 @@
+.getbowtied_call_to_action {
+    @media only screen and (max-width: 1023px) {
+        display: none;
+    }
+
+    animation: buttons-fade-in 0.4s ease 1.5s both;
+    bottom: 59px;
+    display: block;
+    position: fixed;
+    right: 120px;
+    transition: all 1s ease;
+    z-index: 99999;
+
+    .call_to_action_button {
+        background-color: #000000;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14);
+        color: #ffffff !important;
+        display: block;
+        font-size: 12px;
+        font-family: NeueEinstellung;
+        float: left;
+        line-height: 1;
+        margin: 0;
+        padding: 9px 15px 6px;
+        text-transform: uppercase;
+        transition: all 1s ease;
+
+        &:hover {
+            &.purchase_button {
+                background-color: #7CB442;
+            }
+
+            &.message_button {
+                background-color: #007FFF;
+            }
+        }
+
+        .action-btn {
+            svg {
+        		margin: 0 10px 0 0;
+        	}
+
+            span {
+                position: relative;
+                top: -4px;
+            }
+        }
+
+        &.purchase_button {
+    		margin-left: 15px;
+    	}
+    }
+}
+
+@keyframes buttons-fade-in {
+	0% {
+		opacity: 0;
+		transform: translate3d(0,100%,0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+}
