@@ -59,7 +59,7 @@ class Getbowtied_Call_To_Action_Admin {
 	 * @since    1.0.0
 	 */
 	function add_plugin_page() {
-		add_options_page( 'Call-to-Action', 'Call-to-Action', 'manage_options', 'getbowtied-call-to-action', 'Getbowtied_Call_To_Action_Admin::call_to_action_options' );
+		add_options_page( 'Call-to-Action', 'Call-to-Action', 'manage_options', 'getbowtied-call-to-action', array( $this, 'call_to_action_options' ) );
 	}
 
 	/**
@@ -68,10 +68,31 @@ class Getbowtied_Call_To_Action_Admin {
 	 * @since    1.0.0
 	 */
 	function register_getbowtied_call_to_action_settings() {
-		register_setting( 'getbowtied-call-to-action-settings-group', 'purchase_button_text' );
-		register_setting( 'getbowtied-call-to-action-settings-group', 'purchase_button_link' );
-		register_setting( 'getbowtied-call-to-action-settings-group', 'message_button_text' );
-		register_setting( 'getbowtied-call-to-action-settings-group', 'message_button_link' );
+		// header
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_product_title' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_description' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_purchase_button_text' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_purchase_button_link' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_background_image_url' );
+
+		// testimonial
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_author' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_text' );
+
+		// page layouts
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_page_layouts_description' );
+		for( $i = 1; $i <=9; $i++) {
+			register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_layout_thumb_'.$i.'_link' );
+			register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_layout_thumb_'.$i.'_image_url' );
+		}
+
+		// documentation link
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_documentation_button_text' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_documentation_button_link' );
+
+		// support link
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_support_button_text' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_support_button_link' );
 	}
 
 	/**
@@ -79,57 +100,69 @@ class Getbowtied_Call_To_Action_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public static function call_to_action_options() {
+	public function call_to_action_options() {
 	?>
 		<div class="wrap">
-			<h2>GetBowtied Call-to-Action</h2>
+			<h2><?php esc_html_e( 'GetBowtied Call-to-Action', 'getbowtied-call-to-action' ); ?></h2>
 
 			<form method="post" action="options.php" novalidate="novalidate">
 
 				<?php settings_fields( 'getbowtied-call-to-action-settings-group' ); ?>
     			<?php do_settings_sections( 'getbowtied-call-to-action-settings-group' ); ?>
 
-				<h3>Purchase Button</h3>
-				<table class="form-table">
-					<tbody>
+				<table class="form-table getbowtied-call-to-action-table">
+					<tbody class="table-section">
 						<tr>
-							<th scope="row">
-								<label for="purchase_button_text">Button Text</label>
-							</th>
-							<td>
-								<input type="text" name="purchase_button_text" id="purchase_button_text" value="<?php echo get_option( 'purchase_button_text', '' ); ?>" class="regular-text" />
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">
-								<label for="purchase_button_link">Button Link</label>
-							</th>
-							<td>
-								<input type="text" name="purchase_button_link" id="purchase_button_link" value="<?php echo get_option( 'purchase_button_link', '' ); ?>" class="regular-text" />
-							</td>
+							<td colspan="2"><?php esc_html_e( 'Header', 'getbowtied-call-to-action' ); ?></td>
 						</tr>
 					</tbody>
-				</table>
-
-				<h3>Message Button</h3>
-				<table class="form-table">
 					<tbody>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_product_title', 'Title' ); ?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_description', 'Description' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_purchase_button_text', 'Purchase Button Text' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_purchase_button_link', 'Purchase Button Link' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_background_image_url', 'Background Image URL' ); ?>
+					</tbody>
+					<tbody class="table-section">
 						<tr>
-							<th scope="row">
-								<label for="message_button_text">Button Text</label>
-							</th>
-							<td>
-								<input type="text" name="message_button_text" id="message_button_text" value="<?php echo get_option( 'message_button_text', '' ); ?>" class="regular-text" />
-							</td>
+							<td colspan="2"><?php esc_html_e( 'Testimonial', 'getbowtied-call-to-action' ); ?></td>
 						</tr>
+					</tbody>
+					<tbody>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_testimonial_author', 'Title' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_testimonial_text', 'Text' ); ?>
+					</tbody>
+					<tbody class="table-section">
 						<tr>
-							<th scope="row">
-								<label for="message_button_link">Button Link</label>
-							</th>
-							<td>
-								<input type="text" name="message_button_link" id="message_button_link" value="<?php echo get_option( 'message_button_link', '' ); ?>" class="regular-text" />
-							</td>
+							<td colspan="2"><?php esc_html_e( 'Page Layouts', 'getbowtied-call-to-action' ); ?></td>
 						</tr>
+					</tbody>
+					<tbody>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_page_layouts_description', 'Description' ); ?>
+						<?php
+							for( $i = 1; $i <=9; $i++) {
+								$this->get_call_to_action_text_option( 'getbowtied_layout_thumb_'.$i.'_link', 'Layout '.$i.' Link' );
+								$this->get_call_to_action_text_option( 'getbowtied_layout_thumb_'.$i.'_image_url', 'Layout '.$i.' Image URL' );
+							}
+						?>
+					</tbody>
+					<tbody class="table-section">
+						<tr>
+							<td colspan="2"><?php esc_html_e( 'Documentation Button', 'getbowtied-call-to-action' ); ?></td>
+						</tr>
+					</tbody>
+					<tbody>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_documentation_button_text', 'Text' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_documentation_button_link', 'Link' ); ?>
+					</tbody>
+					<tbody class="table-section">
+						<tr>
+							<td colspan="2"><?php esc_html_e( 'Support Button', 'getbowtied-call-to-action' ); ?></td>
+						</tr>
+					</tbody>
+					<tbody>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_support_button_text', 'Text' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_support_button_link', 'Link' ); ?>
 					</tbody>
 				</table>
 
@@ -141,17 +174,61 @@ class Getbowtied_Call_To_Action_Admin {
 	}
 
 	/**
+	 * Prints text field html.
+	 *
+	 * @since    1.1.0
+	 */
+	public function get_call_to_action_text_option( $option = '', $label = '' ) {
+		if( empty($option) || !is_string($option) ) return;
+
+		printf(
+			'<tr><th scope="row"><label for="%s">%s</label></th><td><input type="text" name="%s" id="%s" value="%s" class="regular-text" /></td></tr>',
+			$option,
+			esc_html( $label, 'getbowtied-call-to-action' ),
+			$option,
+			$option,
+			get_option( $option, '' )
+		);
+
+		return;
+	}
+
+	/**
+	 * Prints textarea field html.
+	 *
+	 * @since    1.1.0
+	 */
+	public function get_call_to_action_textarea_option( $option = '', $label = '' ) {
+		if( empty($option) || !is_string($option) ) return;
+
+		printf(
+			'<tr><th scope="row"><label for="%s">%s</label></th><td><textarea name="%s" id="%s" value="%s" class="regular-text"></textarea></td></tr>',
+			$option,
+			esc_html( $label, 'getbowtied-call-to-action' ),
+			$option,
+			$option,
+			get_option( $option, '' )
+		);
+
+		return;
+	}
+
+	/**
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {}
+	public function enqueue_styles() {
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/getbowtied-call-to-action-admin.css', array(), $this->version, 'all' );
+	}
 
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {}
+	public function enqueue_scripts() {
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/getbowtied-call-to-action-admin.js', array('jquery'), $this->version, true );
+	}
 
 }

@@ -56,25 +56,9 @@ class Getbowtied_Call_To_Action_Public {
 
 		$purchase_link = get_option( 'purchase_button_link', '' );
 		$purchase_text = get_option( 'purchase_button_text', '' );
-		$message_link  = get_option( 'message_button_link', '' );
-		$message_text  = get_option( 'message_button_text', '' );
 	?>
 
 		<div class="getbowtied_call_to_action">
-			<?php if( !empty($message_link) && !empty($message_text) ) { ?>
-				<a class="call_to_action_button message_button" href="<?php echo esc_url($message_link); ?>" target="_blank">
-					<span class="action-btn message-btn">
-						<svg
-							xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-							width="18" height="18"
-							viewBox="0 0 50 50"
-							fill="#ffffff">
-							<path d="M 25 2 C 12.300781 2 2 11.601563 2 23.5 C 2 29.800781 4.898438 35.699219 10 39.800781 L 10 48.601563 L 18.601563 44.101563 C 20.699219 44.699219 22.800781 44.898438 25 44.898438 C 37.699219 44.898438 48 35.300781 48 23.398438 C 48 11.601563 37.699219 2 25 2 Z M 27.300781 30.601563 L 21.5 24.398438 L 10.699219 30.5 L 22.699219 17.800781 L 28.601563 23.699219 L 39.101563 17.800781 Z "></path>
-						</svg>
-						<span><?php echo esc_attr($message_text); ?></span>
-					</span>
-				</a>
-			<?php } ?>
 
 			<?php if( !empty($purchase_link) && !empty($purchase_text) ) { ?>
 				<a class="call_to_action_button purchase_button" href="<?php echo esc_url($purchase_link); ?>" target="_blank">
