@@ -138,7 +138,7 @@ class Getbowtied_Call_To_Action_Admin {
 						</tr>
 					</tbody>
 					<tbody>
-						<?php $this->get_call_to_action_text_option( 'getbowtied_page_layouts_description', 'Description' ); ?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_page_layouts_description', 'Description' ); ?>
 						<?php
 							for( $i = 1; $i <=9; $i++) {
 								$this->get_call_to_action_text_option( 'getbowtied_layout_thumb_'.$i.'_link', 'Layout '.$i.' Link' );
@@ -202,7 +202,7 @@ class Getbowtied_Call_To_Action_Admin {
 		if( empty($option) || !is_string($option) ) return;
 
 		printf(
-			'<tr><th scope="row"><label for="%s">%s</label></th><td><textarea name="%s" id="%s" value="%s" class="regular-text"></textarea></td></tr>',
+			'<tr><th scope="row"><label for="%s">%s</label></th><td><textarea name="%s" id="%s" class="regular-text">%s</textarea></td></tr>',
 			$option,
 			esc_html( $label, 'getbowtied-call-to-action' ),
 			$option,
