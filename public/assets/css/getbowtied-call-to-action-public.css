@@ -75,9 +75,70 @@ body .call-to-action-canvas {
     background: #fff;
     height: 100%;
     position: absolute;
-    padding: 35px;
     top: 0;
     width: 100%; }
+    body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header {
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 90px 77px;
+      position: relative; }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header .call-to-action-close {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z '%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        outline: 0;
+        position: absolute;
+        right: 34px;
+        top: 34px;
+        height: 24px;
+        width: 24px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header h4.call-to-action-title,
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header p.call-to-action-description {
+        color: #fff;
+        width: 60%; }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header h4.call-to-action-title {
+        font-size: 28px;
+        line-height: 34px; }
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header h4.call-to-action-title .underline {
+          display: inline-block; }
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header h4.call-to-action-title .underline:after {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20353%2010'%3E%3Cpath%20d%3D'M49.9838979,9.80140463 C44.7514147,9.79465885 37.0586796,9.94951414 25.7704347,9.99326249 C14.4844328,10.033638 7.04719435,9.88215556 4.92186127,9.81489618 C2.79836336,9.7509105 1.42647034,9.15857166 0.73501831,7.80554715 C0.0428526053,6.45252263 -0.0283112866,6.13953837 0.00737261339,5.0457303 C0.0459112253,3.87107209 1.98324113,2.12758607 3.12736892,2.16468785 C4.27241429,2.19831754 6.47033862,2.50455602 9.73449787,2.68292233 C12.9993708,2.86466152 32.2842757,3.37962232 38.9052704,3.43011645 C45.528712,3.47723769 309.542571,-0.134134433 319.025312,0.00385640972 C328.508054,0.138474363 327.093952,0.525562981 331.9959,0.677045379 C336.897848,0.828428575 346.621201,1.13139337 347.441931,0.996775419 C348.26368,0.865431152 350.184494,-0.325992297 351.617967,0.892414264 C353.048382,2.11082083 353.515331,5.41258158 352.313293,7.09872849 C351.113295,8.78160171 349.381096,9.27969806 348.08832,8.76811015 C346.795543,8.25989514 345.009309,7.89304386 342.972268,7.67092919 C340.933188,7.45218742 324.208654,6.5837677 319.792006,6.60400503 C184.879896,7.22218015 184.897313,9.97533657 49.9838979,9.80140463 Z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+            content: "";
+            display: block;
+            height: 10px;
+            position: relative;
+            width: 100%;
+            top: -5px; }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header p.call-to-action-description {
+        font-size: 14px;
+        line-height: 20px; }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header a.call-to-action-purchase-link {
+        background-color: #fff;
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 16px;
+        min-width: 50%;
+        padding: 22px 30px 18px;
+        text-transform: uppercase;
+        text-align: center;
+        width: 50%; }
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header a.call-to-action-purchase-link:hover {
+          opacity: 1; }
+    body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial {
+      padding: 35px; }
+    body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts {
+      padding: 35px; }
+    body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links {
+      padding: 35px; }
 
 body .call-to-action-canvas-overlay {
   background: rgba(0, 0, 0, 0.3);

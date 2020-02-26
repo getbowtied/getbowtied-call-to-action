@@ -71,6 +71,7 @@ class Getbowtied_Call_To_Action_Admin {
 		// header
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_product_title' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_description' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_product_color' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_purchase_button_text' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_purchase_button_link' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_background_image_url' );
@@ -119,6 +120,7 @@ class Getbowtied_Call_To_Action_Admin {
 					<tbody>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_product_title', 'Title' ); ?>
 						<?php $this->get_call_to_action_textarea_option( 'getbowtied_description', 'Description' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_product_color', 'Color' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_purchase_button_text', 'Purchase Button Text' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_purchase_button_link', 'Purchase Button Link' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_background_image_url', 'Background Image URL' ); ?>

@@ -58,10 +58,17 @@ class Getbowtied_Call_To_Action_Public {
 	<div class="call-to-action-canvas">
 		<button class="call-to-action-toggle"><span class="icon"></span></button>
 		<div class="call-to-action-canvas-content">
-			<button class="call-to-action-close"></button>
-			<div class="call-to-action-header">
-				<h4><?php esc_html_e( get_option( 'getbowtied_product_title', '' ) ); ?></h4>
-
+			<div class="call-to-action-header" style="background-image:url(<?php esc_html_e( get_option( 'getbowtied_background_image_url', '' ) ); ?>);background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;">
+				<button class="call-to-action-close"></button>
+				<?php if( !empty(get_option( 'getbowtied_product_title', '' )) ) { ?>
+					<h4 class="call-to-action-title"><?php echo wp_kses_post( get_option( 'getbowtied_product_title', '' ) ); ?></h4>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_description', '' )) ) { ?>
+					<p class="call-to-action-description"><?php echo wp_kses_post( get_option( 'getbowtied_description', '' ) ); ?></p>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_purchase_button_link', '' )) && !empty(get_option( 'getbowtied_purchase_button_text', '' )) ) { ?>
+					<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-purchase-link" style="color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;"><?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?></a>
+				<?php } ?>
 			</div>
 
 			<div class="call-to-action-testimonial"></div>
