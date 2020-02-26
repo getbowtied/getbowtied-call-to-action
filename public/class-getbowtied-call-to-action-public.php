@@ -71,7 +71,17 @@ class Getbowtied_Call_To_Action_Public {
 				<?php } ?>
 			</div>
 
-			<div class="call-to-action-testimonial"></div>
+			<div class="call-to-action-testimonial">
+				<?php if( !empty(get_option( 'getbowtied_testimonial_text', '' )) && !empty(get_option( 'getbowtied_testimonial_author', '' )) ) { ?>
+					<div class="call-to-action-testimonial-rating" style="color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;"></div>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_testimonial_text', '' )) ) { ?>
+					<p class="call-to-action-testimonial-text"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_text', '' ) ); ?></p>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_testimonial_author', '' )) ) { ?>
+					<h5 class="call-to-action-testimonial-author"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_author', '' ) ); ?></h5>
+				<?php } ?>
+			</div>
 			<div class="call-to-action-page-layouts"></div>
 			<div class="call-to-action-links"></div>
 
