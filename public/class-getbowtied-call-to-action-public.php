@@ -49,8 +49,52 @@ class Getbowtied_Call_To_Action_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		add_filter( 'body_class', array( $this, 'check_cookie' ) );
+
+		add_action('wp_ajax_set_cookie', array( $this, 'set_cookie' ));
+        add_action('wp_ajax_nopriv_set_cookie', array( $this, 'set_cookie' ));
+
 		add_action( 'wp_footer', array( $this, 'get_buttons' ) );
 	}
+
+	/**
+     * Manage body classes based on cookie.
+     *
+     * @param array $classes Body classes.
+	 *
+     * @return void
+     */
+	public function check_cookie( $classes ) {
+
+		$cookie_value = isset( $_COOKIE[ 'keep_canvas_open' ] ) ? wp_unslash( $_COOKIE[ 'keep_canvas_open' ] ) : '1'; // @codingStandardsIgnoreLine.
+        if ( '1' === $cookie_value) {
+            $classes[] = 'show-call-to-action-canvas';
+        }
+		return $classes;
+	}
+
+	/**
+     * Set a cookie - wrapper for setcookie using WP constants.
+     *
+     * @param bool $secure Whether the cookie should be served only over https.
+	 * @param bool $httponly
+	 *
+     * @return void
+     */
+    public function set_cookie( $secure = false, $httponly = false ) {
+		if (! ( isset($_POST['data']) && $_POST['data'] && isset($_POST['data']['is_canvas_open']) )) {
+            wp_send_json_error( "no info received" );
+        }
+
+        if (! headers_sent() ) {
+            setcookie( 'keep_canvas_open', $_POST['data']['is_canvas_open'], time()+604800, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, $secure, $httponly); // expires in 1 week
+		} elseif (defined('WP_DEBUG') && WP_DEBUG) {
+            headers_sent($file, $line);
+			trigger_error( "close_canvas cookie cannot be set - headers already sent", E_USER_NOTICE ); // @codingStandardsIgnoreLine
+        }
+
+        wp_send_json_success(true);
+    }
 
 	public function get_buttons() {
 	?>
@@ -82,8 +126,36 @@ class Getbowtied_Call_To_Action_Public {
 					<h5 class="call-to-action-testimonial-author"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_author', '' ) ); ?></h5>
 				<?php } ?>
 			</div>
-			<div class="call-to-action-page-layouts"></div>
-			<div class="call-to-action-links"></div>
+
+			<div class="call-to-action-page-layouts">
+				<?php if( !empty(get_option( 'getbowtied_page_layouts_description', '' )) ) { ?>
+					<p class="call-to-action-layouts-description"><?php echo wp_kses_post( get_option( 'getbowtied_page_layouts_description', '' ) ); ?></p>
+				<?php } ?>
+				<div class="call-to-action-layouts-grid">
+					<?php for( $i = 1; $i <= 9; $i++) { ?>
+						<?php if( !empty(get_option( 'getbowtied_layout_thumb_'.$i.'_link', '' )) && !empty(get_option( 'getbowtied_layout_thumb_'.$i.'_image_url', '' )) ) { ?>
+							<a href="<?php echo esc_url( get_option( 'getbowtied_layout_thumb_'.$i.'_link', '' ) ); ?>" class="call-to-action-layout-image">
+								<img src="<?php echo esc_url( get_option(  'getbowtied_layout_thumb_'.$i.'_image_url', '' ) ); ?>" />
+							</a>
+						<?php } ?>
+					<?php } ?>
+				</div>
+				<?php if( !empty(get_option( 'getbowtied_page_layouts_footer_text', '' )) ) { ?>
+					<p class="call-to-action-layouts-footer-text"><?php echo wp_kses_post( get_option( 'getbowtied_page_layouts_footer_text', '' ) ); ?></p>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_purchase_button_link', '' )) && !empty(get_option( 'getbowtied_purchase_button_text', '' )) ) { ?>
+					<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-purchase-link" style="background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;box-shadow: 0px 3px 62px -10px <?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>52;"><?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?></a>
+				<?php } ?>
+			</div>
+
+			<div class="call-to-action-links">
+				<?php if( !empty(get_option( 'getbowtied_documentation_button_text', '' )) && !empty(get_option( 'getbowtied_documentation_button_link', '' )) ) { ?>
+					<a href="<?php echo esc_url( get_option( 'getbowtied_documentation_button_link', '' ) ); ?>" class="call-to-action-documentation-link"><?php echo wp_kses_post( get_option( 'getbowtied_documentation_button_text', '' ) ); ?></a>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_support_button_text', '' )) && !empty(get_option( 'getbowtied_support_button_link', '' )) ) { ?>
+					<a href="<?php echo esc_url( get_option( 'getbowtied_support_button_link', '' ) ); ?>" class="call-to-action-support-link"><?php echo wp_kses_post( get_option( 'getbowtied_support_button_text', '' ) ); ?></a>
+				<?php } ?>
+			</div>
 
 	    </div>
 	</div>
@@ -108,6 +180,10 @@ class Getbowtied_Call_To_Action_Public {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/getbowtied-call-to-action-public.js', array('jquery'), $this->version, true );
+		$args = array(
+			'ajaxurl' => admin_url('admin-ajax.php'),
+		);
+		wp_localize_script( $this->plugin_name, 'call_to_action_vars', $args );
 	}
 
 }

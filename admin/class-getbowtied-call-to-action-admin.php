@@ -86,6 +86,7 @@ class Getbowtied_Call_To_Action_Admin {
 			register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_layout_thumb_'.$i.'_link' );
 			register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_layout_thumb_'.$i.'_image_url' );
 		}
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_page_layouts_footer_text' );
 
 		// documentation link
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_documentation_button_text' );
@@ -118,7 +119,7 @@ class Getbowtied_Call_To_Action_Admin {
 						</tr>
 					</tbody>
 					<tbody>
-						<?php $this->get_call_to_action_text_option( 'getbowtied_product_title', 'Title' ); ?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_product_title', 'Title' ); ?>
 						<?php $this->get_call_to_action_textarea_option( 'getbowtied_description', 'Description' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_product_color', 'Color' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_purchase_button_text', 'Purchase Button Text' ); ?>
@@ -147,6 +148,7 @@ class Getbowtied_Call_To_Action_Admin {
 								$this->get_call_to_action_text_option( 'getbowtied_layout_thumb_'.$i.'_image_url', 'Layout '.$i.' Image URL' );
 							}
 						?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_page_layouts_footer_text', 'Text' ); ?>
 					</tbody>
 					<tbody class="table-section">
 						<tr>

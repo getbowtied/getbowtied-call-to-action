@@ -1,6 +1,10 @@
 body.admin-bar .call-to-action-canvas {
   top: 32px;
   height: calc( 100% - 32px); }
+  @media all and (max-width: 782px) {
+    body.admin-bar .call-to-action-canvas {
+      top: 46px;
+      height: calc( 100% - 46px); } }
 
 body.show-call-to-action-canvas .call-to-action-canvas {
   right: 700px;
@@ -74,15 +78,22 @@ body .call-to-action-canvas {
   body .call-to-action-canvas .call-to-action-canvas-content {
     background: #fff;
     height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
     position: absolute;
     top: 0;
     width: 100%; }
+    body .call-to-action-canvas .call-to-action-canvas-content::-webkit-scrollbar {
+      display: none; }
     body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header {
       background-position: right center;
       background-repeat: no-repeat;
       background-size: cover;
-      padding: 90px 77px 95px;
+      padding: 90px 70px 95px;
       position: relative; }
+      @media all and (max-width: 767px) {
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header {
+          padding: 50px 40px 60px; } }
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header .call-to-action-close {
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z '%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
         background-repeat: no-repeat;
@@ -98,10 +109,19 @@ body .call-to-action-canvas {
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(45deg); }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header .call-to-action-close {
+            right: 15px;
+            top: 15px; } }
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header h4.call-to-action-title,
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header p.call-to-action-description {
         color: #fff;
         width: 60%; }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header h4.call-to-action-title,
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header p.call-to-action-description {
+            width: 100%;
+            text-align: center; } }
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header h4.call-to-action-title {
         font-size: 28px;
         line-height: 34px; }
@@ -123,6 +143,8 @@ body .call-to-action-canvas {
         margin-top: 15px; }
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header a.call-to-action-purchase-link {
         background-color: #fff;
+        -webkit-box-shadow: -2px 2px 81px -27px rgba(0, 0, 0, 0.29);
+        box-shadow: -2px 2px 81px -27px rgba(0, 0, 0, 0.29);
         display: block;
         font-size: 13px;
         font-weight: bold;
@@ -135,19 +157,136 @@ body .call-to-action-canvas {
         width: 50%; }
         body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header a.call-to-action-purchase-link:hover {
           opacity: 1; }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header a.call-to-action-purchase-link {
+            padding: 22px 20px 18px;
+            width: 100%; } }
     body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial {
-      padding: 35px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin: 55px 70px 0;
+      padding-bottom: 45px;
       position: relative;
       text-align: center; }
+      @media all and (max-width: 767px) {
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial {
+          margin: 45px 40px 0;
+          padding-bottom: 35px; } }
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial .call-to-action-testimonial-rating {
         font-family: star;
         font-size: 14px; }
         body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial .call-to-action-testimonial-rating:before {
           content: "\53\53\53\53\53"; }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial .call-to-action-testimonial-text {
+        color: #000;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: bold;
+        margin: 20px auto 0;
+        width: 85%; }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial .call-to-action-testimonial-text {
+            width: 100%; } }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial .call-to-action-testimonial-author {
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 20px;
+        margin-top: 20px; }
     body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts {
-      padding: 35px; }
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin: 40px 70px 0;
+      padding-bottom: 70px; }
+      @media all and (max-width: 767px) {
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts {
+          margin: 40px 40px 0;
+          padding-bottom: 40px; } }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layouts-description,
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layouts-footer-text {
+        font-size: 14px;
+        line-height: 20px;
+        margin: 0 auto;
+        text-align: center;
+        width: 80%; }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layouts-description,
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layouts-footer-text {
+            width: 100%; } }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layouts-footer-text {
+        margin-top: 40px; }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layouts-grid {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        -ms-grid-rows: 335px 335px 335px;
+        grid-template-rows: 335px 335px 335px;
+        grid-gap: 25px;
+        margin-top: 40px; }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layouts-grid {
+            -ms-grid-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            -ms-grid-rows: 240px 240px 240px 240px 240px;
+            grid-template-rows: 240px 240px 240px 240px 240px; } }
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layouts-grid .call-to-action-layout-image {
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          overflow: hidden; }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts a.call-to-action-purchase-link {
+        color: #fff;
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 16px;
+        min-width: 50%;
+        margin: 35px auto 0;
+        padding: 22px 30px 18px;
+        text-transform: uppercase;
+        text-align: center;
+        width: 50%; }
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts a.call-to-action-purchase-link:hover {
+          opacity: 1; }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts a.call-to-action-purchase-link {
+            padding: 22px 20px 18px;
+            width: 100%; } }
     body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links {
-      padding: 35px; }
+      margin: 0 auto;
+      padding: 30px 70px 50px;
+      text-align: center; }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link,
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link {
+        color: #000;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 14px;
+        text-transform: uppercase; }
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link:before,
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link:before {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          position: relative;
+          top: 5px; }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link,
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link {
+            display: block; } }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link:before {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2050%2050'%3E%3Cpath%20d%3D'M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 17.664062 16 L 17.664062 34 L 23.839844 34 C 29.191844 34 32.335938 30.670141 32.335938 24.994141 C 32.335938 19.331141 29.178844 16 23.839844 16 L 17.664062 16 z M 19.910156 18.021484 L 23.691406 18.021484 C 27.682406 18.021484 30.039062 20.616531 30.039062 25.019531 C 30.039063 29.409531 27.708406 31.978516 23.691406 31.978516 L 19.910156 31.978516 L 19.910156 18.021484 z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E"); }
+      @media all and (max-width: 767px) {
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link {
+          margin-bottom: 10px; } }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link {
+        margin-left: 20px; }
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link:before {
+          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2050%2050'%3E%3Cpath%20d%3D'M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 25.019531 15 C 19.794531 15 16.529297 18.712688 16.529297 24.679688 C 16.529297 30.672688 19.756531 34.347656 25.019531 34.347656 C 26.210531 34.347656 27.336266 34.156156 28.322266 33.785156 L 29.949219 36 L 32.535156 36 L 30.193359 32.746094 C 32.293359 31.235094 33.470703 28.354688 33.470703 24.679688 C 33.470703 18.725688 30.218531 15 25.019531 15 z M 25.019531 17.126953 C 28.758531 17.126953 31.101562 20.046641 31.101562 24.681641 C 31.101562 27.498641 30.294656 29.701516 28.847656 30.853516 L 27.169922 28.625 L 24.558594 28.625 L 27.003906 31.941406 C 26.363906 32.133406 25.71025 32.222656 25.03125 32.222656 C 21.24025 32.222656 18.898438 29.342641 18.898438 24.681641 C 18.898437 20.033641 21.254531 17.126953 25.019531 17.126953 z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E"); }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link {
+            margin-left: 0; } }
 
 body .call-to-action-canvas-overlay {
   background: rgba(0, 0, 0, 0.3);
