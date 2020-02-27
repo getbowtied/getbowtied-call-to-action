@@ -4,7 +4,7 @@
  * Plugin Name:       GetBowtied Call-To-Action
  * Plugin URI:        https://github.com/getbowtied/getbowtied-call-to-action
  * Description:       Getbowtied call-to-action buttons.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            GetBowtied
  * Author URI:        https://getbowtied.com/
  * License:           GPL-2.0+
