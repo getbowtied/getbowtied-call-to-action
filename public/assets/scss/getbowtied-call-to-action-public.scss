@@ -241,6 +241,17 @@ body {
                     .call-to-action-layout-image {
                         border: 1px solid rgba(0,0,0,.10);
                         overflow: hidden;
+                        position: relative;
+                        .call-to-action-layout-badge {
+                            border-radius: 10px;
+                            color: #fff;
+                            font-size: 12px;
+                            font-weight: bold;
+                            left: 15px;
+                            padding: 4px 10px 6px;
+                            position: absolute;
+                            top: 15px;
+                        }
                     }
                 }
                 a.call-to-action-purchase-link {

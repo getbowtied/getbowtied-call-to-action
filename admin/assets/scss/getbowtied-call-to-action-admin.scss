@@ -42,10 +42,15 @@
             td {
                 width: 75%;
             }
-            input,
+            input[type="text"],
             textarea {
                 width: 100%;
             }
+        }
+        .separator {
+            display: block;
+            padding: 10px 0;
+            width: 100%;
         }
     }
 }

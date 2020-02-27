@@ -51,6 +51,7 @@ class Getbowtied_Call_To_Action_Admin {
 
 		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
         add_action( 'admin_init', array( $this, 'register_getbowtied_call_to_action_settings' ) );
+		add_action('check_admin_referer', array( $this, 'save_settings' ));
 	}
 
 	/**
@@ -82,6 +83,7 @@ class Getbowtied_Call_To_Action_Admin {
 
 		// page layouts
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_page_layouts_description' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_page_layout_badge_text' );
 		for( $i = 1; $i <=9; $i++) {
 			register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_layout_thumb_'.$i.'_link' );
 			register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_layout_thumb_'.$i.'_image_url' );
@@ -142,10 +144,16 @@ class Getbowtied_Call_To_Action_Admin {
 					</tbody>
 					<tbody>
 						<?php $this->get_call_to_action_textarea_option( 'getbowtied_page_layouts_description', 'Description' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_page_layout_badge_text', 'Badge Text' ); ?>
+						<tr><td colspan="2" class="separator"><hr /></td></tr>
 						<?php
 							for( $i = 1; $i <=9; $i++) {
 								$this->get_call_to_action_text_option( 'getbowtied_layout_thumb_'.$i.'_link', 'Layout '.$i.' Link' );
 								$this->get_call_to_action_text_option( 'getbowtied_layout_thumb_'.$i.'_image_url', 'Layout '.$i.' Image URL' );
+								$this->get_call_to_action_checkbox_option( 'getbowtied_layout_thumb_'.$i.'_show_badge', 'Layout '.$i.' Show Badge' );
+								?>
+								<tr><td colspan="2" class="separator"><hr /></td></tr>
+								<?php
 							}
 						?>
 						<?php $this->get_call_to_action_textarea_option( 'getbowtied_page_layouts_footer_text', 'Text' ); ?>
@@ -198,6 +206,25 @@ class Getbowtied_Call_To_Action_Admin {
 	}
 
 	/**
+	 * Prints checkbox field html.
+	 *
+	 * @since    1.1.0
+	 */
+	public function get_call_to_action_checkbox_option( $option = '', $label = '' ) {
+		if( empty($option) || !is_string($option) ) return;
+		printf(
+			'<tr><th scope="row"><label for="%s">%s</label></th><td><input type="checkbox" name="%s" id="%s" value="1" %s class="regular-text" /></td></tr>',
+			$option,
+			esc_html( $label, 'getbowtied-call-to-action' ),
+			$option,
+			$option,
+			checked( 1, (int)get_option( $option, 0 ) )
+		);
+
+		return;
+	}
+
+	/**
 	 * Prints textarea field html.
 	 *
 	 * @since    1.1.0
@@ -218,6 +245,43 @@ class Getbowtied_Call_To_Action_Admin {
 	}
 
 	/**
+     * Save our settings.
+     *
+     * @param string $action
+     * @return void
+     *
+     * @action check_admin_referer
+     */
+    public function save_settings($action)
+    {
+        if ( 'getbowtied-call-to-action-settings-group-options' !== $action ) {
+            return;
+        }
+
+		for( $i = 0; $i <= 9; $i++ ) {
+			$data = $this->sanitize_checkbox_option($_POST['getbowtied_layout_thumb_'.$i.'_show_badge']);
+			if( get_option('getbowtied_layout_thumb_'.$i.'_show_badge') !== $data ) {
+				update_option('getbowtied_layout_thumb_'.$i.'_show_badge', $data);
+			}
+		}
+
+        return;
+    }
+
+	/**
+     * Sanitize our checkbox option.
+     *
+     * @param bool $value checkbox value.
+     *
+     * @return string string that represents input's value.
+     */
+    public function sanitize_checkbox_option( $value ) {
+    	$value = is_bool( $value ) ? $value : ( 'yes' === $value || 1 === $value || 'true' === $value || '1' === $value );
+
+    	return $value;
+    }
+
+	/**
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
@@ -234,5 +298,4 @@ class Getbowtied_Call_To_Action_Admin {
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/getbowtied-call-to-action-admin.js', array('jquery'), $this->version, true );
 	}
-
 }

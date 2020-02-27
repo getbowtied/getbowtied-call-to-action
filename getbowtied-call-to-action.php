@@ -32,6 +32,8 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'getbowtied-call-to-action'
 );
 
+session_start();
+
 /**
  * The core plugin class.
  *

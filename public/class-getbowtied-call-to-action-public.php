@@ -87,7 +87,7 @@ class Getbowtied_Call_To_Action_Public {
         }
 
         if (! headers_sent() ) {
-            setcookie( 'keep_canvas_open', $_POST['data']['is_canvas_open'], time()+604800, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, $secure, $httponly); // expires in 1 week
+			setcookie( 'keep_canvas_open', $_POST['data']['is_canvas_open'], null, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, $secure, $httponly); // session cookie
 		} elseif (defined('WP_DEBUG') && WP_DEBUG) {
             headers_sent($file, $line);
 			trigger_error( "close_canvas cookie cannot be set - headers already sent", E_USER_NOTICE ); // @codingStandardsIgnoreLine
@@ -135,6 +135,9 @@ class Getbowtied_Call_To_Action_Public {
 					<?php for( $i = 1; $i <= 9; $i++) { ?>
 						<?php if( !empty(get_option( 'getbowtied_layout_thumb_'.$i.'_link', '' )) && !empty(get_option( 'getbowtied_layout_thumb_'.$i.'_image_url', '' )) ) { ?>
 							<a href="<?php echo esc_url( get_option( 'getbowtied_layout_thumb_'.$i.'_link', '' ) ); ?>" class="call-to-action-layout-image">
+								<?php if( !empty(get_option( 'getbowtied_layout_thumb_'.$i.'_show_badge', '' )) ) { ?>
+									<span class="call-to-action-layout-badge"  style="background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;"><?php echo wp_kses_post( get_option( 'getbowtied_page_layout_badge_text', '' ) ); ?></span>
+								<?php } ?>
 								<img src="<?php echo esc_url( get_option(  'getbowtied_layout_thumb_'.$i.'_image_url', '' ) ); ?>" />
 							</a>
 						<?php } ?>
