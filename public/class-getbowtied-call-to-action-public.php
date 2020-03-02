@@ -116,14 +116,23 @@ class Getbowtied_Call_To_Action_Public {
 			</div>
 
 			<div class="call-to-action-testimonial">
-				<?php if( !empty(get_option( 'getbowtied_testimonial_text', '' )) && !empty(get_option( 'getbowtied_testimonial_author', '' )) ) { ?>
+				<?php if( !empty(get_option( 'getbowtied_testimonial_1_text', '' )) && !empty(get_option( 'getbowtied_testimonial_1_author', '' )) ) { ?>
 					<div class="call-to-action-testimonial-rating" style="color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;"></div>
 				<?php } ?>
-				<?php if( !empty(get_option( 'getbowtied_testimonial_text', '' )) ) { ?>
-					<p class="call-to-action-testimonial-text"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_text', '' ) ); ?></p>
+				<?php if( !empty(get_option( 'getbowtied_testimonial_1_text', '' )) ) { ?>
+					<p class="call-to-action-testimonial-text"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_1_text', '' ) ); ?></p>
 				<?php } ?>
-				<?php if( !empty(get_option( 'getbowtied_testimonial_author', '' )) ) { ?>
-					<h5 class="call-to-action-testimonial-author"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_author', '' ) ); ?></h5>
+				<?php if( !empty(get_option( 'getbowtied_testimonial_1_author', '' )) ) { ?>
+					<h5 class="call-to-action-testimonial-author"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_1_author', '' ) ); ?></h5>
+				<?php } ?>
+			</div>
+
+			<div class="call-to-latest-layout">
+				<?php if( !empty(get_option( 'getbowtied_latest_layout_title', '' )) && !empty(get_option( 'getbowtied_latest_layout_image_url', '' )) && !empty(get_option( 'getbowtied_latest_layout_link', '' )) ) { ?>
+					<h4 class="call-to-action-latest-layout-title"><?php echo wp_kses_post( get_option( 'getbowtied_latest_layout_title', '' ) ); ?></h4>
+					<a class="call-to-action-latest-layout-image" href="<?php echo wp_kses_post( get_option( 'getbowtied_latest_layout_link', '' ) ); ?>">
+						<img src="<?php echo wp_kses_post( get_option( 'getbowtied_latest_layout_image_url', '' ) ); ?>" />
+					</a>
 				<?php } ?>
 			</div>
 
@@ -142,14 +151,30 @@ class Getbowtied_Call_To_Action_Public {
 							</a>
 						<?php } ?>
 					<?php } ?>
+					<?php for( $i = 1; $i <= 3; $i++) { ?>
+						<div class="call-to-action-layout-coming-soon"><?php esc_html_e( 'New Layouts Coming Soon', 'getbowtied-call-to-action' ); ?></div>
+						<?php } ?>
 				</div>
 				<?php if( !empty(get_option( 'getbowtied_page_layouts_footer_text', '' )) ) { ?>
 					<p class="call-to-action-layouts-footer-text"><?php echo wp_kses_post( get_option( 'getbowtied_page_layouts_footer_text', '' ) ); ?></p>
 				<?php } ?>
-				<?php if( !empty(get_option( 'getbowtied_purchase_button_link', '' )) && !empty(get_option( 'getbowtied_purchase_button_text', '' )) ) { ?>
-					<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-purchase-link" style="background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;box-shadow: 0px 3px 62px -10px <?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>52;"><?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?></a>
+			</div>
+
+			<div class="call-to-action-testimonial">
+				<?php if( !empty(get_option( 'getbowtied_testimonial_2_text', '' )) && !empty(get_option( 'getbowtied_testimonial_2_author', '' )) ) { ?>
+					<div class="call-to-action-testimonial-rating" style="color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;"></div>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_testimonial_2_text', '' )) ) { ?>
+					<p class="call-to-action-testimonial-text"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_2_text', '' ) ); ?></p>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_testimonial_2_author', '' )) ) { ?>
+					<h5 class="call-to-action-testimonial-author"><?php echo wp_kses_post( get_option( 'getbowtied_testimonial_2_author', '' ) ); ?></h5>
 				<?php } ?>
 			</div>
+
+			<?php if( !empty(get_option( 'getbowtied_purchase_button_link', '' )) && !empty(get_option( 'getbowtied_purchase_button_text', '' )) ) { ?>
+				<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-bottom-purchase-link" style="background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;box-shadow: 0px 3px 62px -10px <?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>52;"><?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?></a>
+			<?php } ?>
 
 			<div class="call-to-action-links">
 				<?php if( !empty(get_option( 'getbowtied_documentation_button_text', '' )) && !empty(get_option( 'getbowtied_documentation_button_link', '' )) ) { ?>
@@ -157,6 +182,9 @@ class Getbowtied_Call_To_Action_Public {
 				<?php } ?>
 				<?php if( !empty(get_option( 'getbowtied_support_button_text', '' )) && !empty(get_option( 'getbowtied_support_button_link', '' )) ) { ?>
 					<a href="<?php echo esc_url( get_option( 'getbowtied_support_button_link', '' ) ); ?>" class="call-to-action-support-link"><?php echo wp_kses_post( get_option( 'getbowtied_support_button_text', '' ) ); ?></a>
+				<?php } ?>
+				<?php if( !empty(get_option( 'getbowtied_facebook_button_text', '' )) && !empty(get_option( 'getbowtied_facebook_button_link', '' )) ) { ?>
+					<a href="<?php echo esc_url( get_option( 'getbowtied_facebook_button_link', '' ) ); ?>" class="call-to-action-facebook-link"><?php echo wp_kses_post( get_option( 'getbowtied_facebook_button_text', '' ) ); ?></a>
 				<?php } ?>
 			</div>
 

@@ -161,6 +161,19 @@ body .call-to-action-canvas {
           body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-header a.call-to-action-purchase-link {
             padding: 22px 20px 18px;
             width: 100%; } }
+    body .call-to-action-canvas .call-to-action-canvas-content .call-to-latest-layout {
+      margin: 55px 70px 0;
+      text-align: center; }
+      @media all and (max-width: 767px) {
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-latest-layout {
+          margin: 45px 40px 0; } }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-latest-layout .call-to-action-latest-layout-title {
+        color: #000;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 14px;
+        margin-bottom: 30px;
+        text-transform: uppercase; }
     body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-testimonial {
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       margin: 55px 70px 0;
@@ -240,37 +253,51 @@ body .call-to-action-canvas {
             padding: 4px 10px 6px;
             position: absolute;
             top: 15px; }
-      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts a.call-to-action-purchase-link {
-        color: #fff;
-        display: block;
-        font-size: 13px;
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts .call-to-action-layout-coming-soon {
+        border: 2px dashed rgba(0, 0, 0, 0.1);
+        color: #8d8d8d;
+        font-size: 12px;
         font-weight: bold;
-        line-height: 16px;
-        min-width: 50%;
-        margin: 35px auto 0;
-        padding: 22px 30px 18px;
+        padding: 40px 30px;
         text-transform: uppercase;
-        text-align: center;
-        width: 50%; }
-        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts a.call-to-action-purchase-link:hover {
-          opacity: 1; }
-        @media all and (max-width: 767px) {
-          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-page-layouts a.call-to-action-purchase-link {
-            padding: 22px 20px 18px;
-            width: 100%; } }
+        text-align: center; }
+    body .call-to-action-canvas .call-to-action-canvas-content a.call-to-action-bottom-purchase-link {
+      color: #fff;
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 16px;
+      min-width: 50%;
+      margin: 35px auto 0;
+      padding: 22px 30px 18px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 50%; }
+      body .call-to-action-canvas .call-to-action-canvas-content a.call-to-action-bottom-purchase-link:hover {
+        opacity: 1; }
+      @media all and (max-width: 767px) {
+        body .call-to-action-canvas .call-to-action-canvas-content a.call-to-action-bottom-purchase-link {
+          padding: 22px 20px 18px;
+          width: 100%; } }
     body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links {
-      margin: 0 auto;
-      padding: 30px 70px 50px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      margin: 30px 70px 50px;
+      padding-top: 30px;
       text-align: center; }
+      @media all and (max-width: 767px) {
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links {
+          margin: 30px 40px 50px; } }
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link,
-      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link {
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link,
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-facebook-link {
         color: #000;
         font-size: 12px;
         font-weight: bold;
         line-height: 14px;
         text-transform: uppercase; }
         body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link:before,
-        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link:before {
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link:before,
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-facebook-link:before {
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -283,13 +310,21 @@ body .call-to-action-canvas {
           top: 5px; }
         @media all and (max-width: 767px) {
           body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link,
-          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link,
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-facebook-link {
             display: block; } }
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link:before {
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2050%2050'%3E%3Cpath%20d%3D'M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 17.664062 16 L 17.664062 34 L 23.839844 34 C 29.191844 34 32.335938 30.670141 32.335938 24.994141 C 32.335938 19.331141 29.178844 16 23.839844 16 L 17.664062 16 z M 19.910156 18.021484 L 23.691406 18.021484 C 27.682406 18.021484 30.039062 20.616531 30.039062 25.019531 C 30.039063 29.409531 27.708406 31.978516 23.691406 31.978516 L 19.910156 31.978516 L 19.910156 18.021484 z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E"); }
       @media all and (max-width: 767px) {
         body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-documentation-link {
           margin-bottom: 10px; } }
+      body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-facebook-link {
+        margin-left: 20px; }
+        body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-facebook-link:before {
+          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2050%2050'%3E%3Cpath%20d%3D'M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 17.664062 16 L 17.664062 34 L 23.839844 34 C 29.191844 34 32.335938 30.670141 32.335938 24.994141 C 32.335938 19.331141 29.178844 16 23.839844 16 L 17.664062 16 z M 19.910156 18.021484 L 23.691406 18.021484 C 27.682406 18.021484 30.039062 20.616531 30.039062 25.019531 C 30.039063 29.409531 27.708406 31.978516 23.691406 31.978516 L 19.910156 31.978516 L 19.910156 18.021484 z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E"); }
+        @media all and (max-width: 767px) {
+          body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-facebook-link {
+            margin-left: 0; } }
       body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link {
         margin-left: 20px; }
         body .call-to-action-canvas .call-to-action-canvas-content .call-to-action-links .call-to-action-support-link:before {
