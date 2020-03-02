@@ -77,9 +77,18 @@ class Getbowtied_Call_To_Action_Admin {
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_purchase_button_link' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_background_image_url' );
 
-		// testimonial
-		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_author' );
-		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_text' );
+		// testimonial 1
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_1_author' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_1_text' );
+
+		// latest layout
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_latest_layout_title' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_latest_layout_image_url' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_latest_layout_link' );
+
+		// testimonial 2
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_2_author' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_2_text' );
 
 		// page layouts
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_page_layouts_description' );
@@ -97,6 +106,10 @@ class Getbowtied_Call_To_Action_Admin {
 		// support link
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_support_button_text' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_support_button_link' );
+
+		// facebook link
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_facebook_button_text' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_facebook_button_link' );
 	}
 
 	/**
@@ -130,12 +143,22 @@ class Getbowtied_Call_To_Action_Admin {
 					</tbody>
 					<tbody class="table-section">
 						<tr>
-							<td colspan="2"><?php esc_html_e( 'Testimonial', 'getbowtied-call-to-action' ); ?></td>
+							<td colspan="2"><?php esc_html_e( 'Testimonial 1', 'getbowtied-call-to-action' ); ?></td>
 						</tr>
 					</tbody>
 					<tbody>
-						<?php $this->get_call_to_action_text_option( 'getbowtied_testimonial_author', 'Title' ); ?>
-						<?php $this->get_call_to_action_text_option( 'getbowtied_testimonial_text', 'Text' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_testimonial_1_author', 'Title' ); ?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_testimonial_1_text', 'Text' ); ?>
+					</tbody>
+					<tbody class="table-section">
+						<tr>
+							<td colspan="2"><?php esc_html_e( 'Latest Layout', 'getbowtied-call-to-action' ); ?></td>
+						</tr>
+					</tbody>
+					<tbody>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_latest_layout_title', 'Title' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_latest_layout_image_url', 'Image URL' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_latest_layout_link', 'Link' ); ?>
 					</tbody>
 					<tbody class="table-section">
 						<tr>
@@ -160,6 +183,15 @@ class Getbowtied_Call_To_Action_Admin {
 					</tbody>
 					<tbody class="table-section">
 						<tr>
+							<td colspan="2"><?php esc_html_e( 'Testimonial 2', 'getbowtied-call-to-action' ); ?></td>
+						</tr>
+					</tbody>
+					<tbody>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_testimonial_2_author', 'Title' ); ?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_testimonial_2_text', 'Text' ); ?>
+					</tbody>
+					<tbody class="table-section">
+						<tr>
 							<td colspan="2"><?php esc_html_e( 'Documentation Button', 'getbowtied-call-to-action' ); ?></td>
 						</tr>
 					</tbody>
@@ -175,6 +207,15 @@ class Getbowtied_Call_To_Action_Admin {
 					<tbody>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_support_button_text', 'Text' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_support_button_link', 'Link' ); ?>
+					</tbody>
+					<tbody class="table-section">
+						<tr>
+							<td colspan="2"><?php esc_html_e( 'Facebook Button', 'getbowtied-call-to-action' ); ?></td>
+						</tr>
+					</tbody>
+					<tbody>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_facebook_button_text', 'Text' ); ?>
+						<?php $this->get_call_to_action_text_option( 'getbowtied_facebook_button_link', 'Link' ); ?>
 					</tbody>
 				</table>
 
