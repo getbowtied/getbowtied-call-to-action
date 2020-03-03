@@ -49,10 +49,11 @@ class Getbowtied_Call_To_Action_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		add_filter( 'body_class', array( $this, 'check_cookie' ) );
-
 		add_action('wp_ajax_set_cookie', array( $this, 'set_cookie' ));
         add_action('wp_ajax_nopriv_set_cookie', array( $this, 'set_cookie' ));
+
+		add_action('wp_ajax_check_cookie', array( $this, 'check_cookie' ));
+        add_action('wp_ajax_nopriv_check_cookie', array( $this, 'check_cookie' ));
 
 		add_action( 'wp_footer', array( $this, 'get_buttons' ) );
 	}
@@ -68,9 +69,10 @@ class Getbowtied_Call_To_Action_Public {
 
 		$cookie_value = isset( $_COOKIE[ 'keep_canvas_open' ] ) ? wp_unslash( $_COOKIE[ 'keep_canvas_open' ] ) : '1'; // @codingStandardsIgnoreLine.
         if ( '1' === $cookie_value) {
-            $classes[] = 'show-call-to-action-canvas';
+            wp_send_json_success(true);
         }
-		return $classes;
+
+		wp_send_json_success(false);
 	}
 
 	/**
@@ -173,7 +175,7 @@ class Getbowtied_Call_To_Action_Public {
 			</div>
 
 			<?php if( !empty(get_option( 'getbowtied_purchase_button_link', '' )) && !empty(get_option( 'getbowtied_purchase_button_text', '' )) ) { ?>
-				<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-bottom-purchase-link" style="background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;box-shadow: 0px 3px 62px -10px <?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>52;"><?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?></a>
+				<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-bottom-purchase-link" style="background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;box-shadow: -8px 8px 35px -5px <?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>a1;"><?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?></a>
 			<?php } ?>
 
 			<div class="call-to-action-links">
