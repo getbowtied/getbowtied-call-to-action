@@ -12,15 +12,10 @@ body {
 
     &.show-call-to-action-canvas {
         .call-to-action-canvas {
-            right: 700px;
-            transform: translate3d(700px, 0, 0);
-            @media all and (max-width: 767px) {
-                right: 320px;
-                transform: translate3d(320px, 0, 0);
-            }
+            transform: translateX(0);
+            visibility: visible;
         }
         .call-to-action-canvas-overlay {
-            cursor: pointer;
             opacity: 1;
             visibility: visible;
         }
@@ -37,15 +32,16 @@ body {
         backface-visibility: hidden;
         height: 100%;
         position: fixed;
-        right: -700px;
+        right: 0;
         top: 0;
-        transform: translate3d(0, 0, 0);
-        transition: all .5s ease;;
+        transform: translateX(700px);
+        transition: all .5s ease;
         width: 700px;
         z-index: 99999;
+        visibility: hidden;
 
         @media all and (max-width: 767px) {
-            right: -320px;
+            transform: translateX(320px);
             width: 320px;
         }
 
@@ -68,13 +64,25 @@ body {
             height: 73px;
             transition: left 1s ease, opacity 0s ease, visibility 0s ease;
             visibility: visible;
+            @media all and (max-width: 767px) {
+                left: -40px;
+                width: 45px;
+                height: 45px;
+            }
 
             span.icon {
                 background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2034%2035'%3E%3Cpath%20d%3D'M25.7580513,34.5625 L8.5505641,34.5625 C4.05558974,34.5625 0.398410256,30.891875 0.398410256,26.380375 L0.398410256,8.719375 C0.398410256,4.207875 4.05558974,0.53725 8.5505641,0.53725 L25.7580513,0.53725 C30.2530256,0.53725 33.9102051,4.207875 33.9102051,8.719375 L33.9102051,26.380375 C33.9102051,30.891875 30.2530256,34.5625 25.7580513,34.5625 Z M8.5505641,3.16225 C5.49753846,3.16225 3.01379487,5.655125 3.01379487,8.719375 L3.01379487,26.380375 C3.01379487,29.444625 5.49753846,31.9375 8.5505641,31.9375 L25.7580513,31.9375 C28.8110769,31.9375 31.2948205,29.444625 31.2948205,26.380375 L31.2948205,8.719375 C31.2948205,5.655125 28.8110769,3.16225 25.7580513,3.16225 L8.5505641,3.16225 Z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E"),url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2034%2035'%3E%3Cpath%20d%3D'M20.3729744,26.6665 L14.1954359,26.6665 C13.4727179,26.6665 12.8877436,26.079375 12.8877436,25.354 C12.8877436,24.628625 13.4727179,24.0415 14.1954359,24.0415 L20.3729744,24.0415 C21.0956923,24.0415 21.6806667,24.628625 21.6806667,25.354 C21.6806667,26.079375 21.0948205,26.6665 20.3729744,26.6665 Z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E"),url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2034%2035'%3E%3Cpath%20d%3D'M16.8857949,15.2915 L14.1954359,15.2915 C13.4727179,15.2915 12.8877436,14.704375 12.8877436,13.979 C12.8877436,13.253625 13.4727179,12.6665 14.1954359,12.6665 L16.8857949,12.6665 C17.6085128,12.6665 18.1934872,13.253625 18.1934872,13.979 C18.1934872,14.704375 17.607641,15.2915 16.8857949,15.2915 Z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E"),url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2034%2035'%3E%3Cpath%20d%3D'M17.2842051,26.103875 C16.5614872,26.103875 15.9765128,25.51675 15.9765128,24.791375 L15.9765128,13.979 C15.9765128,13.253625 16.5614872,12.6665 17.2842051,12.6665 C18.0069231,12.6665 18.5918974,13.253625 18.5918974,13.979 L18.5918974,24.791375 C18.5918974,25.515875 18.0060513,26.103875 17.2842051,26.103875 Z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E"),url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2034%2035'%3E%3Cellipse%20cx%3D'17.2031282'%20cy%3D'9.64775'%20rx%3D'1.66251282'%20ry%3D'1.668625'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
                 display: block;
                 margin: auto;
                 width: 34px;
                 height: 35px;
+                @media all and (max-width: 767px) {
+                    width: 21px;
+                    height: 22px;
+                }
             }
         }
 
@@ -103,15 +111,22 @@ body {
                     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z '%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: cover;
+                    background-size: 20px;
+                    background-color: rgba(0,0,0,0.35);
+                    border-radius: 50%;
                     cursor: pointer;
                     outline: 0;
-                    position: absolute;
-                    right: 34px;
-                    top: 34px;
-                    height: 24px;
-                    width: 24px;
+                    position: fixed;
+                    right: 15px;
+                    top: 15px;
+                    height: 40px;
+                    width: 40px;
                     transform: rotate(45deg);
+                    transition: all .3s ease;
+                    z-index: 9999;
+                    &:hover {
+                        background-color: rgba(0,0,0,0.5);
+                    }
                     @media all and (max-width: 767px) {
                         right: 15px;
                         top: 15px;
