@@ -69,6 +69,10 @@ class Getbowtied_Call_To_Action_Admin {
 	 * @since    1.0.0
 	 */
 	function register_getbowtied_call_to_action_settings() {
+
+		// visible to the public
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_visible_to_public' );
+
 		// header
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_product_title' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_description' );
@@ -217,6 +221,9 @@ class Getbowtied_Call_To_Action_Admin {
 						<?php $this->get_call_to_action_text_option( 'getbowtied_facebook_button_text', 'Text' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_facebook_button_link', 'Link' ); ?>
 					</tbody>
+					<tbody>
+						<?php $this->get_call_to_action_checkbox_option( 'getbowtied_visible_to_public', 'Visible to the public' ); ?>
+					</tbody>
 				</table>
 
 				<?php submit_button(); ?>
@@ -259,7 +266,7 @@ class Getbowtied_Call_To_Action_Admin {
 			esc_html( $label, 'getbowtied-call-to-action' ),
 			$option,
 			$option,
-			checked( 1, (int)get_option( $option, 0 ) )
+			checked( 1, (int)get_option( $option, 0 ), false )
 		);
 
 		return;
