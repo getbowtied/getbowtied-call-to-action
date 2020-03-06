@@ -151,7 +151,7 @@ class Getbowtied_Call_To_Action_Admin {
 						</tr>
 					</tbody>
 					<tbody>
-						<?php $this->get_call_to_action_text_option( 'getbowtied_testimonial_1_author', 'Title' ); ?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_testimonial_1_author', 'Title' ); ?>
 						<?php $this->get_call_to_action_textarea_option( 'getbowtied_testimonial_1_text', 'Text' ); ?>
 					</tbody>
 					<tbody class="table-section">
@@ -191,7 +191,7 @@ class Getbowtied_Call_To_Action_Admin {
 						</tr>
 					</tbody>
 					<tbody>
-						<?php $this->get_call_to_action_text_option( 'getbowtied_testimonial_2_author', 'Title' ); ?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_testimonial_2_author', 'Title' ); ?>
 						<?php $this->get_call_to_action_textarea_option( 'getbowtied_testimonial_2_text', 'Text' ); ?>
 					</tbody>
 					<tbody class="table-section">
