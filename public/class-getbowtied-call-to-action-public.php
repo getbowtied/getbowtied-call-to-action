@@ -118,6 +118,9 @@ class Getbowtied_Call_To_Action_Public {
 					<?php if( !empty(get_option( 'getbowtied_purchase_button_link', '' )) && !empty(get_option( 'getbowtied_purchase_button_text', '' )) ) { ?>
 						<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-purchase-link" style="color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;"><?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?></a>
 					<?php } ?>
+					<?php if( !empty(get_option( 'getbowtied_refund_text', '' )) ) { ?>
+						<p class="call-to-action-refund-text"><?php echo wp_kses_post( get_option( 'getbowtied_refund_text', '' ) ); ?></p>
+					<?php } ?>
 				</div>
 
 				<div class="call-to-action-testimonial">

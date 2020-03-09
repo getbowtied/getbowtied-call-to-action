@@ -134,7 +134,8 @@ body {
                     }
                 }
                 h4.call-to-action-title,
-                p.call-to-action-description {
+                p.call-to-action-description,
+                .call-to-action-refund-text {
                     color: #fff;
                     width: 60%;
                     @media all and (max-width: 767px) {
@@ -160,10 +161,16 @@ body {
                         }
                     }
                 }
-                p.call-to-action-description {
+                p.call-to-action-description,
+                .call-to-action-refund-text {
                     font-size: 14px;
                     line-height: 20px;
                     margin-top: 15px;
+                }
+                p.call-to-action-refund-text {
+                    font-size: 12px;
+                    line-height: 18px;
+                    margin-top: 20px;
                 }
                 a.call-to-action-purchase-link {
                     background-color: #fff;

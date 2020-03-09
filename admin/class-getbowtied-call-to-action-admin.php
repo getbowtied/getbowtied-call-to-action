@@ -80,6 +80,7 @@ class Getbowtied_Call_To_Action_Admin {
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_purchase_button_text' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_purchase_button_link' );
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_background_image_url' );
+		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_refund_text' );
 
 		// testimonial 1
 		register_setting( 'getbowtied-call-to-action-settings-group', 'getbowtied_testimonial_1_author' );
@@ -144,6 +145,7 @@ class Getbowtied_Call_To_Action_Admin {
 						<?php $this->get_call_to_action_text_option( 'getbowtied_purchase_button_text', 'Purchase Button Text' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_purchase_button_link', 'Purchase Button Link' ); ?>
 						<?php $this->get_call_to_action_text_option( 'getbowtied_background_image_url', 'Background Image URL' ); ?>
+						<?php $this->get_call_to_action_textarea_option( 'getbowtied_refund_text', 'Refund Text' ); ?>
 					</tbody>
 					<tbody class="table-section">
 						<tr>
