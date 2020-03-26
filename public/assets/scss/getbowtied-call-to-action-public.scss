@@ -175,7 +175,7 @@ body {
                 a.call-to-action-purchase-link {
                     background-color: #fff;
                     border-radius: 3px;
-                    box-shadow: -2px 2px 81px -27px rgba(0, 0, 0, 0.29);
+                    box-shadow: -8px 8px 35px -5px rgba(0,0,0,.2);
                     display: block;
                     font-size: 13px;
                     font-weight: bold;
@@ -186,6 +186,7 @@ body {
                     text-transform: uppercase;
                     text-align: center;
                     width: 50%;
+                    transition: all .5s ease;
                     &:hover {
                         background-color: #000;
                         color: #fff !important;
