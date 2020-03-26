@@ -255,6 +255,16 @@ body {
                     line-height: 20px;
                     margin-top: 20px;
                     margin-bottom: 0;
+
+                    a {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 12px;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
                 }
             }
 
@@ -338,11 +348,13 @@ body {
                 line-height: 16px;
                 min-width: 40%;
                 margin: 40px auto 45px;
-                padding: 22px 30px 20px;
+                padding: 22px 30px 17px;
                 text-transform: uppercase;
                 text-align: center;
                 width: 40%;
+                transition: all .5s ease;
                 &:hover {
+                    box-shadow: -8px 8px 35px -5px rgba(0,0,0,.5) !important;
                     background-color: #000 !important;
                     color: #fff;
                     opacity: 1;
@@ -382,6 +394,10 @@ body {
                         margin-right: 10px;
                         position: relative;
                         top: 7px;
+                        transition: all .3s ease;
+                    }
+                    &:hover {
+                        opacity: 1;
                     }
                     @media all and (max-width: 767px) {
                         display: block;
