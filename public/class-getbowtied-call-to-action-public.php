@@ -49,54 +49,8 @@ class Getbowtied_Call_To_Action_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		add_action('wp_ajax_set_cookie', array( $this, 'set_cookie' ));
-        add_action('wp_ajax_nopriv_set_cookie', array( $this, 'set_cookie' ));
-
-		add_action('wp_ajax_check_cookie', array( $this, 'check_cookie' ));
-        add_action('wp_ajax_nopriv_check_cookie', array( $this, 'check_cookie' ));
-
 		add_action( 'wp_footer', array( $this, 'get_buttons' ) );
 	}
-
-	/**
-     * Manage body classes based on cookie.
-     *
-     * @param array $classes Body classes.
-	 *
-     * @return void
-     */
-	public function check_cookie( $classes ) {
-
-		$cookie_value = isset( $_COOKIE[ 'keep_canvas_open' ] ) ? wp_unslash( $_COOKIE[ 'keep_canvas_open' ] ) : '1'; // @codingStandardsIgnoreLine.
-        if ( '1' === $cookie_value) {
-            wp_send_json_success(true);
-        }
-
-		wp_send_json_success(false);
-	}
-
-	/**
-     * Set a cookie - wrapper for setcookie using WP constants.
-     *
-     * @param bool $secure Whether the cookie should be served only over https.
-	 * @param bool $httponly
-	 *
-     * @return void
-     */
-    public function set_cookie( $secure = false, $httponly = false ) {
-		if (! ( isset($_POST['data']) && $_POST['data'] && isset($_POST['data']['is_canvas_open']) )) {
-            wp_send_json_error( "no info received" );
-        }
-
-        if (! headers_sent() ) {
-			setcookie( 'keep_canvas_open', $_POST['data']['is_canvas_open'], null, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, $secure, $httponly); // session cookie
-		} elseif (defined('WP_DEBUG') && WP_DEBUG) {
-            headers_sent($file, $line);
-			trigger_error( "close_canvas cookie cannot be set - headers already sent", E_USER_NOTICE ); // @codingStandardsIgnoreLine
-        }
-
-        wp_send_json_success(true);
-    }
 
 	public function get_buttons() {
 
@@ -219,6 +173,7 @@ class Getbowtied_Call_To_Action_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
+		wp_enqueue_script( 'js-cookie' , plugin_dir_url( __FILE__ ) . 'assets/js/js.cookie.min.js', array('jquery'), '2.2.1', true );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/getbowtied-call-to-action-public.js', array('jquery'), $this->version, true );
 		$args = array(
 			'ajaxurl' => admin_url('admin-ajax.php'),
