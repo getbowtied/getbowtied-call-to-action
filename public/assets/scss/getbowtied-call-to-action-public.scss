@@ -1,3 +1,18 @@
+.call-to-action-canvas .call-to-action-purchase-link,
+.call-to-action-canvas .call-to-action-bottom-purchase-link,
+.call-to-action-canvas .call-to-action-testimonial-text,
+.call-to-action-canvas .call-to-action-links a,
+.call-to-action-canvas .call-to-action-layout-badge,
+.call-to-action-canvas .call-to-action-refund-text,
+.call-to-action-canvas .call-to-action-testimonial-author a,
+.call-to-action-canvas a.call-to-action-bottom-purchase-link {
+    font-family: var(--global--main-font);
+}
+
+.call-to-action-canvas .call-to-action-testimonial-author {
+    font-family: var(--global--secondary-font);
+}
+
 body {
     &.admin-bar {
         .call-to-action-canvas {
