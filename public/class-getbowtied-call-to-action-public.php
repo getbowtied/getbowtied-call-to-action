@@ -135,18 +135,35 @@ class Getbowtied_Call_To_Action_Public {
 				</div>
 
 				<?php if( !empty(get_option( 'getbowtied_purchase_button_link', '' )) && !empty(get_option( 'getbowtied_purchase_button_text', '' )) ) { ?>
-					<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-bottom-purchase-link" style="background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;box-shadow: -8px 8px 35px -5px <?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>a1;"><?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?></a>
+					<a href="<?php echo esc_url( get_option( 'getbowtied_purchase_button_link', '' ) ); ?>" class="call-to-action-bottom-purchase-link" style="background-color:<?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>;box-shadow: -8px 8px 35px -5px <?php echo esc_url( get_option( 'getbowtied_product_color', '' ) ); ?>a1;">
+						<?php echo wp_kses_post( get_option( 'getbowtied_purchase_button_text', '' ) ); ?>
+					</a>
 				<?php } ?>
 
 				<div class="call-to-action-links">
 					<?php if( !empty(get_option( 'getbowtied_documentation_button_text', '' )) && !empty(get_option( 'getbowtied_documentation_button_link', '' )) ) { ?>
-						<a href="<?php echo esc_url( get_option( 'getbowtied_documentation_button_link', '' ) ); ?>" class="call-to-action-documentation-link"><?php echo wp_kses_post( get_option( 'getbowtied_documentation_button_text', '' ) ); ?></a>
+						<a href="<?php echo esc_url( get_option( 'getbowtied_documentation_button_link', '' ) ); ?>" class="call-to-action-documentation-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+		                        <path d="M 2 4 L 2 18 C 2 19.093063 2.9069372 20 4 20 L 10.587891 20 A 1.5 1.5 0 0 0 12 21 A 1.5 1.5 0 0 0 13.412109 20 L 20 20 C 21.093063 20 22 19.093063 22 18 L 22 4 L 15 4 C 13.789062 4 12.735556 4.5762461 12 5.4355469 C 11.264444 4.5762461 10.210938 4 9 4 L 2 4 z M 4 6 L 9 6 C 10.116666 6 11 6.8833339 11 8 L 13 8 C 13 6.8833339 13.883334 6 15 6 L 20 6 L 20 18 L 4 18 L 4 6 z M 15 9 L 15 11 L 17 11 L 17 9 L 15 9 z M 15 12 L 15 16 L 17 16 L 17 12 L 15 12 z"/>
+		                    </svg>
+							<?php echo wp_kses_post( get_option( 'getbowtied_documentation_button_text', '' ) ); ?>
+						</a>
 					<?php } ?>
 					<?php if( !empty(get_option( 'getbowtied_support_button_text', '' )) && !empty(get_option( 'getbowtied_support_button_link', '' )) ) { ?>
-						<a href="<?php echo esc_url( get_option( 'getbowtied_support_button_link', '' ) ); ?>" class="call-to-action-support-link"><?php echo wp_kses_post( get_option( 'getbowtied_support_button_text', '' ) ); ?></a>
+						<a href="<?php echo esc_url( get_option( 'getbowtied_support_button_link', '' ) ); ?>" class="call-to-action-support-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+		                        <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 12 6 C 9.79 6 8 7.79 8 10 L 10 10 C 10 8.9 10.9 8 12 8 C 13.1 8 14 8.9 14 10 C 14 12 11 12.367 11 15 L 13 15 C 13 13.349 16 12.5 16 10 C 16 7.79 14.21 6 12 6 z M 11 16 L 11 18 L 13 18 L 13 16 L 11 16 z"/>
+		                    </svg>
+							<?php echo wp_kses_post( get_option( 'getbowtied_support_button_text', '' ) ); ?>
+						</a>
 					<?php } ?>
 					<?php if( !empty(get_option( 'getbowtied_facebook_button_text', '' )) && !empty(get_option( 'getbowtied_facebook_button_link', '' )) ) { ?>
-						<a href="<?php echo esc_url( get_option( 'getbowtied_facebook_button_link', '' ) ); ?>" class="call-to-action-facebook-link"><?php echo wp_kses_post( get_option( 'getbowtied_facebook_button_text', '' ) ); ?></a>
+						<a href="<?php echo esc_url( get_option( 'getbowtied_facebook_button_link', '' ) ); ?>" class="call-to-action-facebook-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+		                        <path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.014467 17.065322 19.313017 13.21875 19.898438 L 13.21875 14.384766 L 15.546875 14.384766 L 15.912109 12.019531 L 13.21875 12.019531 L 13.21875 10.726562 C 13.21875 9.7435625 13.538984 8.8710938 14.458984 8.8710938 L 15.935547 8.8710938 L 15.935547 6.8066406 C 15.675547 6.7716406 15.126844 6.6953125 14.089844 6.6953125 C 11.923844 6.6953125 10.654297 7.8393125 10.654297 10.445312 L 10.654297 12.019531 L 8.4277344 12.019531 L 8.4277344 14.384766 L 10.654297 14.384766 L 10.654297 19.878906 C 6.8702905 19.240845 4 15.970237 4 12 C 4 7.5698774 7.5698774 4 12 4 z"/>
+		                    </svg>
+							<?php echo wp_kses_post( get_option( 'getbowtied_facebook_button_text', '' ) ); ?>
+						</a>
 					<?php } ?>
 				</div>
 
